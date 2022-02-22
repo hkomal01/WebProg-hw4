@@ -14,7 +14,7 @@
                 numSodas = prompt("How many sodas would you like? ($1.80)", "0");
                 subTotal = numDogs*3.75 + numFries*2 + numSodas*1.8;
                 discounted = subTotal;
-                if (subTotal > 20) {
+                if (subTotal >= 20) {
                         discounted *= .9;
                 }
                 taxed = discounted*.0625;
