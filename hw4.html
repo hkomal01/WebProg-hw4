@@ -1,0 +1,30 @@
+<html>
+<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>
+                Joe's Hotdogs
+        </title>
+</head>
+<body>
+        <div id="block1" ><h1><span id="one">Joe's</span> <span id="two">Hotdogs</span></h1></div>
+        <div id="block2"><script language="javascript">
+                numDogs = prompt("How many hotdogs would you like? ($3.75)", "0");
+                numFries = prompt("How many fries would you like? ($2.00)", "0");
+                numSodas = prompt("How many sodas would you like? ($1.80)", "0");
+                subTotal = numDogs*3.75 + numFries*2 + numSodas*1.8;
+                discounted = subTotal;
+                if (subTotal > 20) {
+                        discounted *= .9;
+                }
+                taxed = discounted*.0625;
+                total = discounted*1.0625;
+
+                document.write(numDogs + " Hot dogs<br>" + numFries + " Fries<br>"
+                + numSodas + " Sodas<br><br>" + "Subtotal: $" + subTotal.toFixed(2) 
+                + "<br>Total with discount: $" + discounted.toFixed(2) + "<br>Tax (6.25%): $"
+                + taxed.toFixed(2) + "<br><br>Total: $" + total.toFixed(2));
+        </script></div>
+</body>
+
+</html>
