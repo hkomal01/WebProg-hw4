@@ -9,21 +9,40 @@
 <body>
         <div id="block1" ><h1><span id="one">Joe's</span> <span id="two">Hotdogs</span></h1></div>
         <div id="block2"><script language="javascript">
+                //Prompts
                 numDogs = prompt("How many hotdogs would you like? ($3.75)", "0");
                 numFries = prompt("How many fries would you like? ($2.00)", "0");
                 numSodas = prompt("How many sodas would you like? ($1.80)", "0");
+                //Calculate subtotal
                 subTotal = numDogs*3.75 + numFries*2 + numSodas*1.8;
                 discounted = subTotal;
+                
+                //Apply discount if necessary
                 if (subTotal >= 20) {
                         discounted *= .9;
                 }
+                
+                //Calculate taxed and discounted
                 taxed = discounted*.0625;
                 total = discounted*1.0625;
 
-                document.write(numDogs + " Hot dogs<br>" + numFries + " Fries<br>"
-                + numSodas + " Sodas<br><br>" + "Subtotal: $" + subTotal.toFixed(2) 
-                + "<br>Total with discount: $" + discounted.toFixed(2) + "<br>Tax (6.25%): $"
-                + taxed.toFixed(2) + "<br><br>Total: $" + total.toFixed(2));
+                //Print out everything til subtotal
+                document.write(numDogs + " Hot dog(s)<br>" + numFries 
+                + " Frie(s)<br>" + numSodas + " Soda(s)<br><br>" + "Subtotal: $" 
+                + subTotal.toFixed (2)); 
+
+                //Print discount
+                if (subTotal >= 20) {
+                        document.write("<br>Total with discount: $" + 
+                        discounted.toFixed(2));
+                } else {
+                        document.write("<br>No discount (subtotal under $20)");
+                }
+
+                //Print taxed amount and total cost
+                document.write("<br>Tax (6.25%): $" + taxed.toFixed(2)
+                + "<br><br>Total: $" + total.toFixed(2));
+
         </script></div>
 </body>
 
